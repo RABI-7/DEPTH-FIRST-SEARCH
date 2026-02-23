@@ -1,7 +1,7 @@
 # BREADTH-FIRST-SEARCH
 <h1>ExpNo 3 : Implement Breadth First Search Traversal of a Graph</h1> 
-<h3>Name:  </h3>
-<h3>Register Number: </h3>
+<h3>Name:RABI BASKAR PRABURAJAN </h3>
+<h3>Register Number: 212224040257</h3>
 <H3>Aim:</H3>
 <p>To Implement Breadth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -68,6 +68,35 @@ Now, Queue becomes empty, So, terminate these process of iteration.
 
 </ol>
 
+
+### PROGRAM:
+```
+#import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='A'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+```
+##Output :
+<img width="944" height="285" alt="Screenshot 2025-09-09 082848" src="https://github.com/user-attachments/assets/c7972b22-b08f-4246-9fda-c28afdf5e676" />
+
 <hr>
 <h3>Sample Input</h3>
 <hr>
@@ -99,17 +128,48 @@ G F <BR>
 2 4 <BR>
 3 4 <BR>
 <hr>
+<h3></h3>PROGRAM</h3>
+<hr>
+<hr>
+```
+
+    #import defaultdict
+    from collections import defaultdict
+    def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+    graph=defaultdict(list)
+    n,e=map(int,input().split())
+    for i in range(e):
+      u,v=map(str,input().split())
+      graph[u].append(v)
+      graph[v].append(u)
+    #print(graph)
+    start='0'
+    visited=defaultdict(bool)
+    path=[]
+    traversedpath=dfs(graph,start,visited,path)
+    print(traversedpath)
+    
+    
+
+
+
+<hr>
+<hr>
+
 <h3>Sample Output</h3>
 <hr>
 ['0', '1', '2', '3', '4']
 <hr>
+### OUTPUT
+<img width="783" height="195" alt="image" src="https://github.com/user-attachments/assets/b21f2bf3-30e0-4ef8-b3b2-1b3a1cb770a2" />
+
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Breadth First Search for the same graph was done successfully.</p>
-
-
-
-
-
-
-
